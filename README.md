@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mafia Club — Rules Guide
 
-## Getting Started
+Interactive rules site for **rules.secretmafiaclub.com**, styled to match [secretmafiaclub.com](https://www.secretmafiaclub.com).
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy on Netlify → rules.secretmafiaclub.com
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Push to GitHub
 
-## Learn More
+Create a new empty GitHub repo (e.g. `mafia-rules`), then from this folder:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git add .
+git commit -m "Mafia Club interactive rules guide"
+git remote add origin https://github.com/YOUR_USER/mafia-rules.git
+git branch -M main
+git push -u origin main
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Create the Netlify site
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Open [app.netlify.com](https://app.netlify.com) (same account as the invite site).
+2. **Add new site → Import an existing project** → GitHub → pick `mafia-rules`.
+3. Build settings should already match `netlify.toml`:
+   - Build command: `npm run build`
+   - Node: `22`
+4. Click **Deploy site**.
+5. Open the `*.netlify.app` URL and confirm the guide works.
 
-## Deploy on Vercel
+### 3. Add the custom domain
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. In the Netlify site: **Domain management → Add a domain** → `rules.secretmafiaclub.com`.
+2. Netlify will show DNS instructions. Usually you add a **CNAME** at your DNS host:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Type | Name | Value |
+| --- | --- | --- |
+| CNAME | `rules` | `YOUR-SITE-NAME.netlify.app` |
+
+(Use the exact hostname Netlify shows.)
+
+3. Wait for DNS to propagate. Netlify provisions HTTPS automatically.
+
+### 4. Point the main site at it
+
+On the Wix site, change **LEARN THE RULES** to:
+
+`https://rules.secretmafiaclub.com`
+
+## Editing content
+
+- Rules copy: `src/lib/rules.ts`
+- Photos: `public/images/` (see that folder’s README)

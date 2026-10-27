@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  # Next.js publish dir is handled by Netlify’s Next runtime — do not set publish.
+
+[build.environment]
+  NODE_VERSION = "22"
