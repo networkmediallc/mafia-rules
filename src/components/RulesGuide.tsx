@@ -149,13 +149,20 @@ function SectionView({
                 src={section.image}
                 alt={section.imageAlt}
                 fill
-                className="section-media-img"
+                className={`section-media-img ${section.imageZoom ? "is-zoomed" : ""}`}
                 sizes="(max-width: 900px) 100vw, 48vw"
-                style={
-                  section.imageFocus
+                style={{
+                  ...(section.imageFocus
                     ? { objectPosition: section.imageFocus }
-                    : undefined
-                }
+                    : null),
+                  ...(section.imageZoom
+                    ? {
+                        ["--image-zoom" as string]: String(section.imageZoom),
+                        ["--image-focus" as string]:
+                          section.imageFocus ?? "center center",
+                      }
+                    : null),
+                }}
               />
             )}
           </div>

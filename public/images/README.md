@@ -16,9 +16,10 @@ Swap any file here with your own photo using the **same filename**. No code chan
 | `first-night.jpg` | First Night |
 | `tips-mafia.jpg` | Mafia Tips |
 | `voting.jpg` | Voting |
-| `second-night.jpg` | Second Night |
+| `second-night-crop2.jpg` | Second Night |
+| `second-night-split.jpg` | Sheriff Tips |
 | `gallery-6.jpg` | Exit Speech |
 | `end-game.jpg` | End of Game |
-| `etiquette.jpg` | Etiquette |
+| `etiquette-v2.jpg` | Etiquette |
 
 Recommended: JPG/PNG, roughly 1200–1600px on the long edge. Keep `logo.png` square.

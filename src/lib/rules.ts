@@ -24,6 +24,8 @@ export type RuleSection = {
   imagePosition?: "right" | "left" | "background" | "top";
   /** CSS object-position for the primary image crop, e.g. "25% 40%". */
   imageFocus?: string;
+  /** Extra zoom on the primary image (1 = normal). */
+  imageZoom?: number;
   /** Give the photo column more horizontal space on desktop. */
   mediaWide?: boolean;
   /** Show the “scroll for more” hint when this section overflows. */
@@ -184,9 +186,9 @@ export const SECTIONS: RuleSection[] = [
     title: "The Second Night",
     menuLabel: "Second Night",
     eyebrow: "05",
-    image: "/images/second-night.jpg",
-    imageAlt: "Players signaling with fingers during a night round",
-    imageFocus: "22% 42%",
+    image: "/images/second-night-crop2.jpg",
+    imageAlt: "A player at the table during the game",
+    imageFocus: "50% 35%",
     imagePosition: "right",
     blocks: [
       {
@@ -334,8 +336,9 @@ export const SECTIONS: RuleSection[] = [
     title: "Etiquette",
     menuLabel: "Etiquette",
     eyebrow: "10",
-    image: "/images/etiquette.jpg",
-    imageAlt: "Players gathered around the table",
+    image: "/images/etiquette-v2.jpg",
+    imageAlt: "A player seated at the table with headphones and blindfold",
+    imageFocus: "48% 28%",
     imagePosition: "left",
     scrollHint: true,
     blocks: [
@@ -404,9 +407,9 @@ export const SECTIONS: RuleSection[] = [
     title: "Tips for Sheriff",
     menuLabel: "Sheriff Tips",
     eyebrow: "13",
-    image: "/images/tips-sheriff.jpg",
+    image: "/images/second-night-split.jpg",
     imageAlt: "The Sheriff weighing an accusation",
-    imageFocus: "18% 28%",
+    imageFocus: "58% 42%",
     imagePosition: "right",
     blocks: [
       {
