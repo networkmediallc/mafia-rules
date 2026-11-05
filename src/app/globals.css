@@ -358,6 +358,11 @@ button {
   animation: media-reveal 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.section-media-img.fit-contain {
+  object-fit: contain;
+  animation: none;
+}
+
 .section-media-img.is-zoomed {
   animation: none;
   transform: scale(var(--image-zoom, 1));

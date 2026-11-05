@@ -149,7 +149,9 @@ function SectionView({
                 src={section.image}
                 alt={section.imageAlt}
                 fill
-                className={`section-media-img ${section.imageZoom ? "is-zoomed" : ""}`}
+                className={`section-media-img ${section.imageZoom ? "is-zoomed" : ""} ${
+                  section.imageFit === "contain" ? "fit-contain" : ""
+                }`}
                 sizes="(max-width: 900px) 100vw, 48vw"
                 style={{
                   ...(section.imageFocus

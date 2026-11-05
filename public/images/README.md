@@ -15,7 +15,7 @@ Swap any file here with your own photo using the **same filename**. No code chan
 | `gallery-2.jpg` | Day Two |
 | `first-night.jpg` | First Night |
 | `tips-mafia.jpg` | Mafia Tips |
-| `voting.jpg` | Voting |
+| `voting-full.jpg` | Voting |
 | `second-night-crop2.jpg` | Second Night |
 | `second-night-split.jpg` | Sheriff Tips |
 | `gallery-6.jpg` | Exit Speech |

@@ -26,6 +26,8 @@ export type RuleSection = {
   imageFocus?: string;
   /** Extra zoom on the primary image (1 = normal). */
   imageZoom?: number;
+  /** object-fit for the primary image. Default cover. */
+  imageFit?: "cover" | "contain";
   /** Give the photo column more horizontal space on desktop. */
   mediaWide?: boolean;
   /** Show the “scroll for more” hint when this section overflows. */
@@ -244,10 +246,11 @@ export const SECTIONS: RuleSection[] = [
     title: "Voting",
     menuLabel: "Voting",
     eyebrow: "07",
-    image: "/images/voting.jpg",
-    imageAlt: "Players voting with paddles",
+    image: "/images/voting-full.jpg",
+    imageAlt: "A voting paddle on the table",
+    imageFocus: "50% 75%",
+    imageFit: "contain",
     imagePosition: "right",
-    mediaWide: true,
     scrollHint: true,
     blocks: [
       {
